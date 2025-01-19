@@ -1,4 +1,4 @@
-#wrapper {
+#wrapper, #loginform {
     margin: 0 auto;
     width: 600px;
     border: 2px solid #212121;
@@ -6,6 +6,17 @@
     background: #eee;
     padding-bottom: 25px;
     max-width: 100%;
+}
+
+#loginform {
+    padding-top: 18px;
+    text-align: center;
+}
+
+#loginform p {
+    padding: 15px 25px;
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 
 #menu {
@@ -41,7 +52,13 @@ input {
     border: 1px solid #ff9800
 }
 
-#submitmsg {
+#name {
+    border-radius: 5px;
+    border: 1px solid #ff9800;
+    padding: 2px 8px;
+}
+
+#submitmsg, #enter {
     background: #ff9800;
     font-weight: bold;
     border: 2px solid #e65100;
