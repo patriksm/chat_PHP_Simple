@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+
+function loginForm() {
+    echo 
+    '<div id="loginform">
+    <p>Please enter your name to continue!</p>
+    <form action="index.php" method="post">
+        <label></label>
+        <input name="name" type="text" id="name"></input>
+        <input name="enter" type="submit" id="enter" value="Enter"></input>
+    </form>
+    </div>';
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,16 +25,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="loginform">
-        <p>Please enter your name to continue!</p>
-        <form action="" method="">
-            <label></label>
-            <input name="name" type="text" id="name"></input>
-            <input name="enter" type="submit" id="enter" value="Enter"></input>
-        </form>
-    </div>
+    <?php
+        if(!isset($_POST['name'])){
+            loginForm();
+        } 
+         
+    ?>
     <div id="wrapper">
-        <div id="menu">M E N U</div>
+        <div id="menu">W e l c o m e, <?php echo $_POST['name']; ?></div>
         <div id="chatbox"> C h a t B o x</div>
         <form name="message" action="">
             <input name="usermsg" type="text" id="usermsg"></input>
