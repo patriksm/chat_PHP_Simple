@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 function loginForm() {
     echo 
     '<div id="loginform">
@@ -30,7 +32,12 @@ function loginForm() {
          
     ?>
     <div id="wrapper">
-        <div id="menu">W e l c o m e, <?php echo $_POST['name']; ?></div>
+        <div id="menu">
+            <p>W e l c o m e, <?php echo $_POST['name']; ?></p>
+            <form action="logout.php" method="POST"> 
+                <button type="submit">E X I T</button> 
+            </form>
+        </div>
         <div id="chatbox"> C h a t B o x</div>
         <form name="message" action="">
             <input name="usermsg" type="text" id="usermsg"></input>
