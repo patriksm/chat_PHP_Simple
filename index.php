@@ -44,5 +44,17 @@ function loginForm() {
             <input name="submitmsg" type="submit" id="submitmsg" value="Send"></input>
         </form>
     </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- https://code.jquery.com/jquery-3.7.1.min.js -->
+    <script type="text/javascript">
+        console.log("Our console");
+        $(document).ready(function () {
+            $("#submitmsg").click(function () {
+                var clientmsg = $("usermsg").val();
+                $.post("post.php", { text: clientmsg });
+                return false;
+            });
+        });
+    </script>
 </body>
 </html>
